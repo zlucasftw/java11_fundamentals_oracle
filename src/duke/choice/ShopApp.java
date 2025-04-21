@@ -3,18 +3,35 @@ package duke.choice;
 public class ShopApp {
 
     public static void main(String[] args) {
-        double tax = 0.2, total;
+
+        double tax = 0.2, total = 0.0;
 
         System.out.println("Welcome to Duke Choice Shop!");
 
         Customer c1 = new Customer();
 
         c1.name = "Pinky";
+        c1.size = "S";
+
+        int measurement = 3;
+
+        switch (measurement) {
+            case 1, 2, 3:
+                c1.size = "S";
+                break;
+            case 4, 5, 6:
+                c1.size = "M";
+                break;
+            case 7, 8, 9:
+                c1.size = "L";
+                break;
+            default:
+                c1.size = "X";
+        }
 
         System.out.println("Customer is " + c1.name);
 
         Clothing item1 = new Clothing();
-
         Clothing item2 = new Clothing();
 
         item1.description = "Blue Jacket";
@@ -25,14 +42,12 @@ public class ShopApp {
         item2.price = 10.5;
         item2.size = "S";
 
-        System.out.println("Clothing item 1 description: " + item1.description + ", price: " + item1.price + ", size: " + item1.size);
+        System.out.println("Item 1" + "," + item1.description + "," + item1.price + "," + item1.size);
+        System.out.println("Item 2" + "," + item2.description + "," + item2.price + "," + item2.size);
 
-        System.out.println("Clothing item 2 description: " + item2.description + ", price: " + item2.price + ", size: " + item2.size);
+        total = (item1.price + item2.price * 2) * (1 + tax);
 
-        total = (item2.price * 2) + item1.price;
-        total += total * tax;
-
-        System.out.println("The total amount the customer needs to pay for two T-Shirts and one Jacket is: " + total);
+        System.out.println("Total = " + total);
 
     }
 }
