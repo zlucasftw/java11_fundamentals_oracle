@@ -17,8 +17,10 @@ public class ShopApp {
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
+        Clothing item3 = new Clothing();
+        Clothing item4 = new Clothing();
 
-        Clothing[] items = {item1, item2};
+        Clothing[] items = {item1, item2, item3, item4};
 
         item1.description = "Blue Jacket";
         item1.price = 20.9;
@@ -28,10 +30,28 @@ public class ShopApp {
         item2.price = 10.5;
         item2.size = "S";
 
-        System.out.println("Item 1" + "," + item1.description + "," + item1.price + "," + item1.size);
-        System.out.println("Item 2" + "," + item2.description + "," + item2.price + "," + item2.size);
+        item3.description = "Green Scarf";
+        item3.price = 5;
+        item3.size = "S";
 
-        total = (item1.price + item2.price * 2) * (1 + tax);
+        item4.description = "Blue T-Shirt";
+        item4.price = 10.5;
+        item4.size = "S";
+
+        // System.out.println("Item 1" + "," + item1.description + "," + item1.price + "," + item1.size);
+        // System.out.println("Item 2" + "," + item2.description + "," + item2.price + "," + item2.size);
+
+        for (Clothing item : items) {
+            if (c1.size.equals(item.size)) {
+                if (total > 15) {
+                    break;
+                }
+                total += item.price * (1 + tax);
+                System.out.println("Item: " + item.description + ", " + item.price + ", " + item.size);
+            }
+        }
+
+        // total = (item1.price + item2.price * 2) * (1 + tax);
 
         System.out.println("Total = " + total);
 
