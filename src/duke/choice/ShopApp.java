@@ -4,6 +4,7 @@ public class ShopApp {
 
     public static void main(String[] args) {
 
+        double tax = 0.2;
         double total = 0.0;
 
         System.out.println("Welcome to Duke Choice Shop!");
@@ -11,7 +12,7 @@ public class ShopApp {
         Customer c1 = new Customer();
 
         c1.setName("Pinky");
-        c1.setSize(3);
+        c1.setSize("S");
 
         System.out.println("Customer is " + c1.getName());
 
@@ -44,6 +45,9 @@ public class ShopApp {
             if (c1.getSize().equals(item.getSize())) {
                 total = total + item.getPrice();
                 System.out.println("Item " + "," + item.getDescription() + "," + item.getPrice() + "," + item.getSize());
+
+                total = total + total * tax;        // practice 4.3
+
                 if (total > 15) { break; }
             }
 
