@@ -14,8 +14,6 @@ public class ShopApp {
         c1.setName("Pinky");
         c1.setSize("S");
 
-        System.out.println("Customer is " + c1.getName());
-
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
 
@@ -40,6 +38,11 @@ public class ShopApp {
         // System.out.println("Item 1" + "," + item1.description + "," + item1.price + "," + item1.size);
         // System.out.println("Item 2" + "," + item2.description + "," + item2.price + "," + item2.size);
         // total = (item1.price + item2.price * 2) * (1 + tax);
+        int measurement = 8;
+
+        c1.setSize(measurement);
+
+        System.out.println("Customer is " + c1.getName() + "," + c1.getSize());
 
         for (Clothing item : items) {
             if (c1.getSize().equals(item.getSize())) {

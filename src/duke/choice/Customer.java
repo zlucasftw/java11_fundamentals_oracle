@@ -21,27 +21,26 @@ public class Customer {
         this.size = size;
     }
 
-    public void setSize(int size) {
-
-        switch (size) {
+    public void setSize(int measurement) {
+        switch (measurement) {
             case 1:
             case 2:
             case 3:
-                this.size = "S";
+                size = "S";
                 break;
             case 4:
             case 5:
             case 6:
-                this.size = "M";
+                setSize("M");
                 break;
             case 7:
             case 8:
             case 9:
-                this.size = "L";
+                setSize("L");
                 break;
             default:
-                this.size = "X";
+                setSize("XL");
         }
-
     }
+
 }
