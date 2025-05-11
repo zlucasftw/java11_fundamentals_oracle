@@ -9,10 +9,10 @@ public class Clothing {
     private final double MIN_PRICE = 10;
     private final double MIN_TAX = .2;
 
-    public Clothing(String description, double price, String size) {
+    public Clothing(String description, double price, String aSize) {
         this.description = description;
         this.price = price;
-        this.size = size;
+        size = aSize;
     }
 
     public String getDescription() {

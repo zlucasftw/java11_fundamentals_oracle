@@ -5,6 +5,7 @@ public class ShopApp {
     public static void main(String[] args) {
 
         double tax = 0.2;
+
         double total = 0.0;
 
         System.out.println("Welcome to Duke Choice Shop!");
