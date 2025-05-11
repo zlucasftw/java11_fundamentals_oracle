@@ -41,8 +41,6 @@ public class Clothing {
 
     @Override
     public String toString() {
-        return  "Clothing description: " +  this.description + "\n" +
-                "Price: $" + this.price + "\n" +
-                "Size: " + this.size;
+        return getDescription() + "," + getSize() + "," + getPrice();
     }
 }
