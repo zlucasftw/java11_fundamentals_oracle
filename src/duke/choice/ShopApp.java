@@ -33,8 +33,10 @@ public class ShopApp {
 
         System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
 
+        System.out.println("Clothing Items");
         for (Clothing item : c1.getItems()) {
-            System.out.println("Items " + item.getDescription() + "," + item.getSize() + "," + item.getPrice());
+            // System.out.println("Items " + item.getDescription() + "," + item.getSize() + "," + item.getPrice());
+            System.out.println(item);
         }
 
         int average = 0;                                        // Practice 7.1
@@ -55,7 +57,6 @@ public class ShopApp {
         } catch (ArithmeticException e) {
             System.out.println("Don't divide by 0");
         }
-
 
     }
 }

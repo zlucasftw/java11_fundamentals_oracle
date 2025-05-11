@@ -38,4 +38,11 @@ public class Clothing {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return  "Clothing description: " +  this.description + "\n" +
+                "Price: $" + this.price + "\n" +
+                "Size: " + this.size;
+    }
 }
