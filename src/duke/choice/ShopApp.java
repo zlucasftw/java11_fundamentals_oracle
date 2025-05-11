@@ -11,6 +11,9 @@ public class ShopApp {
 
         Customer c1 = new Customer("Pinky", 3);
 
+        // c1.setName("Pinky");
+        // c1.setSize("S");
+
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
         Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");
 
@@ -23,7 +26,7 @@ public class ShopApp {
 
         c1.addItems(items);
 
-        c1.setSize(measurement);
+        // c1.setSize(measurement);
 
         System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
 
