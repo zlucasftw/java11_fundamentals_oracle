@@ -7,6 +7,11 @@ public class Customer {
 
     private Clothing[] items;
 
+    public Customer(String name, int measurement) {
+        this.name = name;
+        this.setSize(measurement);
+    }
+
     public void addItems(Clothing[] someItems) {
         items = someItems;
     }

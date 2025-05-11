@@ -9,10 +9,7 @@ public class ShopApp {
 
         System.out.println("Welcome to Duke Choice Shop!");
 
-        Customer c1 = new Customer();
-
-        c1.setName("Pinky");
-        c1.setSize("S");
+        Customer c1 = new Customer("Pinky", 3);
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
