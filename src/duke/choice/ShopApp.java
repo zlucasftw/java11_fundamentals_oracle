@@ -34,10 +34,28 @@ public class ShopApp {
         System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
 
         for (Clothing item : c1.getItems()) {
-            System.out.println("Items " + item.getDescription());
+            System.out.println("Items " + item.getDescription() + "," + item.getSize() + "," + item.getPrice());
         }
 
-        System.out.println("Average price Clothing owned by c1: $" + c1.getAverageClothingPrice());
+        int average = 0;                                        // Practice 7.1
+        int count = 0;
+
+        // Practice 7.1
+        for (Clothing item : c1.getItems()) {
+            if (item.getSize().equals("L")) {
+                count++;                                         // Practice 7.1
+                average += item.getPrice(); // Practice 7.1
+            }
+
+        }                                                       // Practice 7.1
+        try {
+            average = (count == 0) ? 0 : average / count;
+            average = average / count;
+            System.out.println("Average price " + average + ", Count " + count);    // Practice 7.1
+        } catch (ArithmeticException e) {
+            System.out.println("Don't divide by 0");
+        }
+
 
     }
 }
