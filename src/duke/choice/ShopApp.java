@@ -17,7 +17,7 @@ public class ShopApp {
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
 
-        Clothing[] items = {item1, item2, new Clothing(), new Clothing(), new Clothing()};
+        Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
 
         item1.setDescription("Blue Jacket");
         item1.setPrice(20.9);
@@ -40,16 +40,15 @@ public class ShopApp {
         // total = (item1.price + item2.price * 2) * (1 + tax);
         int measurement = 8;
 
+        c1.addItems(items);
+
         c1.setSize(measurement);
 
-        System.out.println("Customer is " + c1.getName() + "," + c1.getSize());
+        System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
 
-        for (Clothing item : items) {
-            System.out.println("Item " + "," + item.getDescription() + "," + item.getPrice() + "," + item.getSize());
+        for (Clothing item : c1.getItems()) {
+            System.out.println("Items " + item.getDescription());
         }
-
-        c1.addItems(items);
-        System.out.println("Total = " + c1.getTotalClothingCost());
 
     }
 }
