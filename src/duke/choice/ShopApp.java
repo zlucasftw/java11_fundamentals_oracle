@@ -37,5 +37,7 @@ public class ShopApp {
             System.out.println("Items " + item.getDescription());
         }
 
+        System.out.println("Average price Clothing owned by c1: $" + c1.getAverageClothingPrice());
+
     }
 }

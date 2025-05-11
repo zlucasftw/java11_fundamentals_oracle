@@ -40,6 +40,29 @@ public class Customer {
         return total;
     }
 
+    public double getAverageClothingPrice() {
+
+        double sum = 0.0;
+
+        try {
+            if (items.length > 0) {
+                for (Clothing cloth : items) {
+                    if (cloth.getSize().equals("L")) {
+
+                        sum += cloth.getPrice();
+                    }
+                }
+                return sum / items.length;
+            } else {
+                return 0;
+            }
+        } catch (ArithmeticException exception) {
+            System.out.println("Cannot divide by zero");
+            return 0;
+        }
+
+    }
+
     public String getName() {
         return name;
     }
