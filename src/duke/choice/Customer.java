@@ -4,6 +4,7 @@ public class Customer {
 
     private String name;
     private String size;
+    private Clothing[] items;
 
     public String getName() {
         return name;
@@ -41,6 +42,22 @@ public class Customer {
             default:
                 setSize("XL");
         }
+    }
+
+    public Clothing[] getItems() {
+        return items;
+    }
+
+    public void addItems(Clothing[] clothings) {
+        this.items = clothings;
+    }
+
+    public double getTotalClothingCost() {
+        double total = 0.0;
+        for (Clothing item : this.items) {
+                total += item.getPrice();
+        }
+        return total;
     }
 
 }
