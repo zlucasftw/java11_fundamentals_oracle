@@ -6,8 +6,8 @@ public class Clothing {
     private double price;
     private String size = "M";
 
-    public static final double MIN_PRICE = 10;
-    public static final double MIN_TAX = .2;
+    public final static double MIN_PRICE = 10;
+    public final static double TAX_RATE = .2;
 
     public Clothing(String description, double price, String aSize) {
         this.description = description;
@@ -24,7 +24,7 @@ public class Clothing {
     }
 
     public double getPrice() {
-        return price + (price * MIN_TAX);
+        return price + (price * TAX_RATE);
     }
 
     public void setPrice(double price) {
