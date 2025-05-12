@@ -40,12 +40,13 @@ public class Clothing implements Comparable<Clothing> {
     }
 
     @Override
-    public int compareTo(Clothing anotherCloth) {
-        return this.description.compareTo(anotherCloth.description);
-    }
-
-    @Override
     public String toString() {
         return getDescription() + "," + getSize() + "," + getPrice();
     }
+
+    @Override                                           // practice 8.2
+    public int compareTo(Clothing c) {                  // practice 8.2
+        return this.description.compareTo(c.description);    // practice 8.2
+    }                                                   // practice 8.2
+
 }

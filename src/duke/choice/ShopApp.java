@@ -44,8 +44,6 @@ public class ShopApp {
         int average = 0;                                        // Practice 7.1
         int count = 0;
 
-        Arrays.sort(items);
-
         // Practice 7.1
         for (Clothing item : c1.getItems()) {
             if (item.getSize().equals("L")) {
@@ -62,5 +60,10 @@ public class ShopApp {
             System.out.println("Don't divide by 0");
         }
 
+        Arrays.sort(c1.getItems());
+        for (Clothing item : c1.getItems()) {
+            // System.out.println("Items " + item.getDescription() + "," + item.getSize() + "," + item.getPrice());
+            System.out.println("Item output " + item);
+        }
     }
 }
