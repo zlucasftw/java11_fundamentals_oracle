@@ -1,5 +1,7 @@
 package duke.choice;
 
+import java.util.Arrays;
+
 public class ShopApp {
 
     public static void main(String[] args) {
@@ -41,6 +43,8 @@ public class ShopApp {
 
         int average = 0;                                        // Practice 7.1
         int count = 0;
+
+        Arrays.sort(items);
 
         // Practice 7.1
         for (Clothing item : c1.getItems()) {
