@@ -5,34 +5,26 @@ public class HRApp {
         // System.out.println("Welcome to Duke HRApp");
         System.out.println("HR App Starts");
 
-        Department department = new Department("Department Education");
-        System.out.println(department.toString());
+        Employee e1 = new Employee(230, "Jerry", 333998);
+        Employee e2 = new Employee(420, "Gracie", 3392823);
 
-        Employee employee_01 = new Employee(1, "Duke Employee 01", 2000.1);
-        Employee employee_02 = new Employee(2, "Duke Employee 02", 3000.2);
-        Employee employee_03 = new Employee(3, "Duke Employee 03", 1000.3);
-        Employee employee_04 = new Employee(4, "Duke Employee 04", 2500.4);
+        Department dept = new Department("Education");
 
-        department.addEmployee(employee_01);
-        department.addEmployee(employee_02);
-        department.addEmployee(employee_03);
-        department.addEmployee(employee_04);
+        dept.addEmp(e1);
+        dept.addEmp(e2);
+        dept.addEmp(new Employee(772, "Jack", 2998));
 
-        System.out.println(department.getEmployeeById(1).toString());
+        Employee[] emps = dept.getEmployees();
 
-        for (Employee employee : department.getEmployees()) {
-            System.out.println(employee.toString());
+        for (Employee emp : emps) {
+            System.out.println("Emp " + emp);
+            // System.out.println("Emp " + e2);
+
         }
+        System.out.println("Total " + dept.getTotalSalary());
+        System.out.println("Avg " + dept.getAverageSalary());
 
-        System.out.println("Total salary of the department: $" + department.totalEmployeeSalary());
-        System.out.println("Average salary of the department: $" + department.averageEmployeeSalary());
+        System.out.println("Emp " + dept.getEmployeeByID(420));
 
-        // Employee[] employees = {employee_01, employee_02, employee_03, employee_04};
-
-        // for (Employee employee : employees) {
-        //    System.out.println(employee);
-        // }
-
-        // Department department = new Department("Duke Department", employees);
     }
 }

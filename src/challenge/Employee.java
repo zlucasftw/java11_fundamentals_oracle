@@ -2,30 +2,42 @@ package challenge;
 
 public class Employee {
 
-    private int id;
+    private int ID;
     private String name;
     private double salary;
 
     public Employee(int id, String name, double salary) {
-        this.id = id;
+        this.ID = id;
         this.name = name;
         this.salary = salary;
     }
 
-    public int getId() {
-        return id;
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public double getSalary() {
         return salary;
     }
 
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
-        return "Employee id: " + this.getId() + ", name: " + this.getName() + ", salary: $" + this.getSalary();
+        return "Employee: " + getID() + " " + getName() + " " + getSalary();
     }
 }
