@@ -6,8 +6,12 @@ import io.helidon.webserver.WebServer;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Arrays;
 
+/**
+ *  Created in practice 2
+ *
+ *  @author Oracle
+ */
 public class ShopApp {
     /**
      * @params args the command line arguments
@@ -20,18 +24,21 @@ public class ShopApp {
         Clothing item3 = new Clothing("Green Scarf", 5.0, "S");             // practice 6.2
         Clothing item4 = new Clothing("Blue T-Shirt", 10.5, "S");           // practice 6.2
 
-        Clothing[] items = {item1, item2, item3, item4};    // practice 4.4
-                            // practice 5.3
+        Clothing[] items = {item1, item2, item3, item4};
 
         try {                                                                                     // demo 9
             ItemList list = new ItemList(items);                                                  // demo 9
             Routing routing = Routing.builder()                                                   // demo 9
-                    .get("/items", list).build();                                       // demo 9
+                    .get("/items", list).build();
+            // demo 9
             ServerConfiguration config = ServerConfiguration.builder()                            // demo 9
                     .bindAddress(InetAddress.getLocalHost())                                      // demo 9
-                    .port(8888).build();                                                          // demo 9
-            WebServer ws = WebServer.create(config, routing);                                     // demo 9
-            ws.start();                                                                           // demo 9
+                    .port(8888).build();
+            // demo 9
+            WebServer ws = WebServer.create(config, routing);
+            // demo 9
+            ws.start();
+            []// demo 9
         } catch (UnknownHostException exception) {                                                // demo 9
             exception.printStackTrace();                                                          // demo 9
         }                                                                                         // demo 9

@@ -5,7 +5,10 @@ import io.helidon.webserver.Handler;
 import io.helidon.webserver.ServerRequest;
 import io.helidon.webserver.ServerResponse;
 
-import java.util.Arrays;
+/**
+ * Created for demo 9
+ * @author Oracle
+ */
 
 public class ItemList implements Handler {
     private Clothing[] items;
@@ -16,13 +19,14 @@ public class ItemList implements Handler {
 
     @Override
     public void accept(ServerRequest req, ServerResponse res) {
-
         res.status(Http.Status.OK_200);
-
-        res.headers().put("Content-Type",
-                "text/plain; charset=UTF-8");
-
-        res.send(Arrays.toString(items));
+        res.headers().put("Content-Type", "text/plain; charset=UTF-8");
+        StringBuilder result = new StringBuilder();
+        for (Clothing item : items) {
+            result.append(item + "\n");
+        }
+        res.send(result);
 
     }
+
 }
