@@ -38,7 +38,7 @@ public class ShopApp {
             WebServer ws = WebServer.create(config, routing);
             // demo 9
             ws.start();
-            []// demo 9
+            // demo 9
         } catch (UnknownHostException exception) {                                                // demo 9
             exception.printStackTrace();                                                          // demo 9
         }                                                                                         // demo 9
