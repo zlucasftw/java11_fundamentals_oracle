@@ -1,69 +1,40 @@
 package duke.choice;
 
+import io.helidon.webserver.Routing;
+import io.helidon.webserver.ServerConfiguration;
+import io.helidon.webserver.WebServer;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 
 public class ShopApp {
-
+    /**
+     * @params args the command line arguments
+     */
     public static void main(String[] args) {
+        System.out.println("Welcome to Duke Choice Shop!"); // practice 2
 
-        double tax = 0.2;
+        Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");            // practice 6.2
+        Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");         // practice 6.2
+        Clothing item3 = new Clothing("Green Scarf", 5.0, "S");             // practice 6.2
+        Clothing item4 = new Clothing("Blue T-Shirt", 10.5, "S");           // practice 6.2
 
-        double total = 0.0;
+        Clothing[] items = {item1, item2, item3, item4};    // practice 4.4
+                            // practice 5.3
 
-        System.out.println("Welcome to Duke Choice Shop!");
+        try {                                                                                     // demo 9
+            ItemList list = new ItemList(items);                                                  // demo 9
+            Routing routing = Routing.builder()                                                   // demo 9
+                    .get("/items", list).build();                                       // demo 9
+            ServerConfiguration config = ServerConfiguration.builder()                            // demo 9
+                    .bindAddress(InetAddress.getLocalHost())                                      // demo 9
+                    .port(8888).build();                                                          // demo 9
+            WebServer ws = WebServer.create(config, routing);                                     // demo 9
+            ws.start();                                                                           // demo 9
+        } catch (UnknownHostException exception) {                                                // demo 9
+            exception.printStackTrace();                                                          // demo 9
+        }                                                                                         // demo 9
 
-        Customer c1 = new Customer("Pinky", 3);
-
-        // c1.setName("Pinky");
-        // c1.setSize("S");
-
-        System.out.println("Min Price " + Clothing.MIN_PRICE);
-
-        Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
-        Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");
-
-        Clothing[] items = {item1, item2, new Clothing("Green Scarf", 5.0, "S"), new Clothing("Blue T-Shirt", 10.5, "S")};
-
-        // System.out.println("Item 1" + "," + item1.description + "," + item1.price + "," + item1.size);
-        // System.out.println("Item 2" + "," + item2.description + "," + item2.price + "," + item2.size);
-        // total = (item1.price + item2.price * 2) * (1 + tax);
-        int measurement = 8;
-
-        c1.addItems(items);
-
-        // c1.setSize(measurement);
-
-        System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
-
-        System.out.println("Clothing Items");
-        for (Clothing item : c1.getItems()) {
-            // System.out.println("Items " + item.getDescription() + "," + item.getSize() + "," + item.getPrice());
-            System.out.println("Item output " + item);
-        }
-
-        int average = 0;                                        // Practice 7.1
-        int count = 0;
-
-        // Practice 7.1
-        for (Clothing item : c1.getItems()) {
-            if (item.getSize().equals("L")) {
-                count++;                                         // Practice 7.1
-                average += item.getPrice(); // Practice 7.1
-            }
-
-        }                                                       // Practice 7.1
-        try {
-            average = (count == 0) ? 0 : average / count;
-            average = average / count;
-            System.out.println("Average price " + average + ", Count " + count);    // Practice 7.1
-        } catch (ArithmeticException e) {
-            System.out.println("Don't divide by 0");
-        }
-
-        Arrays.sort(c1.getItems());
-        for (Clothing item : c1.getItems()) {
-            // System.out.println("Items " + item.getDescription() + "," + item.getSize() + "," + item.getPrice());
-            System.out.println("Item output " + item);
-        }
     }
 }
